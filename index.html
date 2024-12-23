@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <title>MEME Generator</title>
 </head>
 <body>
@@ -22,9 +24,9 @@
     </header>
 <section class="meme-gallery ">
     <input type="text" id="searchInput" placeholder="Search for memes..." oninput="filterGallery()" />
-    <button id="searchButton" onclick="filterGallery()">Search</button> <!-- زر البحث -->
+    <button id="searchButton" onclick="filterGallery()">Search</button> 
     <ul class="group">
-        <li><a href="#" onclick="filterByCategory('all')" class="All">All</a></li> <!-- زر جميع الصور -->
+        <li><a href="#" onclick="filterByCategory('all')" class="All">All</a></li> 
         <li><a href="#" onclick="filterByCategory('happy')" class="Happy">Happy</a></li>
         <li><a href="#" onclick="filterByCategory('animal')" class="Animal">Animal</a></li>
         <li><a href="#" onclick="filterByCategory('sad')" class="Sad">Sad</a></li>
@@ -37,11 +39,37 @@
 </section>
   
 <section class="meme-edit">
-    <main>
-<div class="canvas-container">
-    <canvas width="400" height="400" onclick=""></canvas>
-</div>
-</main>
+    <main class="canvas-wrapper">
+        <div class="canvas-div">
+            <canvas width="400" height="400" onclick=""></canvas>
+        </div>
+        <div class="toolbar-box">
+            <div class="toolbar">
+                <i class="fa-solid fa-square-plus" title="Add square"></i>
+                <i class="fa-solid fa-up-down" title="Resize"></i>
+                <i class="fa-solid fa-trash-can" title="Delete"></i>
+
+                <input type="text" class="text-input" placeholder="Enter text here" title="Add text">
+
+                <i class="fa-solid fa-plus" title="Increase font size"></i>
+                <i class="fa-solid fa-minus" title="Decrease font size"></i>
+                <i class="fa-solid fa-align-left" title="Align left"></i>
+                <i class="fa-solid fa-align-center" title="Align center"></i>
+                <i class="fa-solid fa-align-right" title="Align right"></i>
+
+                <select class="font-select" title="Select font">
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Georgia">Georgia</option>
+                </select>
+
+                <i class="fa-solid fa-brush" title="Brush tool"></i>
+                <i class="fa-solid fa-fill-drip" title="Fill tool"></i>
+            </div>
+        </div>
+    </main>
 </section>
     <footer>
     </footer>

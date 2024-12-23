@@ -1,6 +1,7 @@
 @import url('header.css');
 @import url('meme-list.css');
 @import url('render-searchNAV.css');
+@import url('div-icon.css');
 .hidde{
     display:none;
 }
