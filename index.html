@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>MEME Generator</title>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">MEME Generator</div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger icon using Unicode -->
+        </div>
+        <nav class="main-nav" id="nav">
+            <ul>
+                <li><a href="#" data-target="gallery" onclick="toggleGallery()">Gallery</a></li>
+                <li><a href="#" data-target="saved">Saved</a></li>
+                <li><a href="#" data-target="randomize">Randomize</a></li>
+            </ul>
+        </nav>
+    </header>
+<section class="meme-gallery ">
+    <input type="text" id="searchInput" placeholder="Search for memes..." oninput="filterGallery()" />
+    <button id="searchButton" onclick="filterGallery()">Search</button> <!-- زر البحث -->
+    <ul class="group">
+        <li><a href="#" onclick="filterByCategory('all')" class="All">Allll</a></li> <!-- زر جميع الصور -->
+        <li><a href="#" onclick="filterByCategory('happy')" class="Happy">Happy</a></li>
+        <li><a href="#" onclick="filterByCategory('animal')" class="Animal">Animal</a></li>
+        <li><a href="#" onclick="filterByCategory('sad')" class="Sad">Sad</a></li>
+        <li><a href="#" onclick="filterByCategory('bad')" class="Bad">Bad</a></li>
+        <li><a href="#" onclick="filterByCategory('funny')" class="Funny">Funny</a></li>
+    </ul>
+    <main class="Gallery">
+        
+    </main>
+</section>
+  
+<section class="meme-edit">
+    <main>
+<div class="canvas-container">
+    <canvas width="400" height="400" onclick=""></canvas>
+</div>
+</main>
+</section>
+    <footer>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/render-gallary.js"></script>
+    <script src="js/render-searchNAV.JS"></script>
+    <script src="js/meme-edit.js"></script>
+
+
+</body>
+</html>
