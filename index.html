@@ -12,7 +12,7 @@
     <header class="main-header">
         <div class="logo">MEME Generator</div>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-            &#9776; <!-- Hamburger icon using Unicode -->
+            &#9776; 
         </div>
         <nav class="main-nav" id="nav">
             <ul>
@@ -38,24 +38,25 @@
     </main>
 </section>
   
-<section class="meme-edit">
+<section class="meme-edit hidde">
     <main class="canvas-wrapper">
         <div class="canvas-div">
             <canvas width="400" height="400" onclick=""></canvas>
         </div>
+    </main>
         <div class="toolbar-box">
             <div class="toolbar">
-                <i class="fa-solid fa-square-plus" title="Add square"></i>
-                <i class="fa-solid fa-up-down" title="Resize"></i>
-                <i class="fa-solid fa-trash-can" title="Delete"></i>
+                <i class="fa-solid fa-square-plus" title="Add square" onclick="addText()"></i>
+                <i class="fa-solid fa-up-down" title="Resize" onclick="selectLine()"></i>
+                <i class="fa-solid fa-trash-can" title="Delete" onclick="deletLine()"></i>
 
-                <input type="text" class="text-input" placeholder="Enter text here" title="Add text">
+                <input type="text" class="memeTextInput"  title="Add text" value="Add text here">
 
-                <i class="fa-solid fa-plus" title="Increase font size"></i>
-                <i class="fa-solid fa-minus" title="Decrease font size"></i>
-                <i class="fa-solid fa-align-left" title="Align left"></i>
-                <i class="fa-solid fa-align-center" title="Align center"></i>
-                <i class="fa-solid fa-align-right" title="Align right"></i>
+                <i class="fa-solid fa-plus" title="Increase font size" onclick="sizeFont('big')"></i>
+                <i class="fa-solid fa-minus" title="Decrease font size" onclick="sizeFont('small')"></i>
+                <i class="fa-solid fa-align-left" title="Align left" onclick="fonton('left')"></i>
+                <i class="fa-solid fa-align-center" title="Align center" onclick="fonton('center')"></i>
+                <i class="fa-solid fa-align-right" title="Align right" onclick="fonton('right')"></i>
 
                 <select class="font-select" title="Select font">
                     <option value="Arial">Arial</option>
@@ -65,11 +66,15 @@
                     <option value="Georgia">Georgia</option>
                 </select>
 
-                <i class="fa-solid fa-brush" title="Brush tool"></i>
-                <i class="fa-solid fa-fill-drip" title="Fill tool"></i>
+                    <i class="fa-solid fa-brush" title="Brush tool" onclick="triggerColorPicker('brush')"></i>
+
+                    <i class="fa-solid fa-fill-drip" title="Fill tool" onclick="triggerColorPicker('fill')"></i>
+                    <i class="fa-solid fa-bookmark"></i>
+                    <i class="fa-solid fa-download"></i>
+                    <i class="fa-brands fa-facebook"></i>
             </div>
         </div>
-    </main>
+    
 </section>
     <footer>
     </footer>

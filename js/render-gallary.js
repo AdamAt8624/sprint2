@@ -52,6 +52,3 @@ function renderGallery(gImg) {
 }
 
 renderGallery(gImgs)
-function onMemepick(imgElement){
-    console.log(imgElement.src)
-}

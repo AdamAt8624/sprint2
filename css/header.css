@@ -1,7 +1,7 @@
 /* Basic reset and layout */
 
 header {
-    background-color: #2c3e50; /* Dark blue background */
+    background-color: #2c3e50; 
     color: white;
     padding: 20px;
     display: flex;
@@ -13,24 +13,24 @@ header {
 .logo {
     font-size: 1.8em;
     font-weight: bold;
-    margin-left: 20px; /* Keep some space from the left */
+    margin-left: 20px; 
 }
 
 .hamburger {
-    display: none; /* Hidden by default */
+    display: none; 
     font-size: 2em;
     cursor: pointer;
 }
 
 .main-nav {
-    display: flex; /* Flex layout for nav items */
+    display: flex; 
     justify-content: center;
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 40px; /* Space between the links */
+    gap: 40px; 
 }
 
 .main-nav a {
@@ -44,20 +44,19 @@ header {
 }
 
 .main-nav a:hover {
-    background-color: #3498db; /* Light blue background on hover */
+    background-color: #3498db; 
     color: #fff;
 }
 
 .main-nav a:active {
-    background-color: #2980b9; /* Dark blue when active */
+    background-color: #2980b9; 
 }
 
 
 
-/* Responsiveness */
 @media (max-width: 768px) {
     .hamburger {
-        display: block; /* Show the hamburger icon */
+        display: block; 
     }
 
     .main-nav {
