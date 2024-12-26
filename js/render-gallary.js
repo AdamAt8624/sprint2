@@ -1,7 +1,7 @@
 const canvasSection=document.querySelector('.meme-edit')
 
 var gImgs = [
-    {id: 1, url: '../../../Desktop/meme-imgs (square)/1.jpg', keywords: ['funny']},
+    {id: 1, url: 'meme-imgs/meme-imgs  (square)/1.jpg', keywords: ['funny']},
     {id: 2, url: 'meme-imgs/meme-imgs (square)/2.jpg', keywords: 'animal'},
     {id: 3, url: 'meme-imgs/meme-imgs (square)/3.jpg', keywords: 'animal'},
     {id: 4, url: 'meme-imgs/meme-imgs (square)/4.jpg', keywords: 'animal'},
