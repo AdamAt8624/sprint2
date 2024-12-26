@@ -1,3 +1,4 @@
+'use '
 var funny = 0;
 var sad = 0;
 var bad = 0;
@@ -14,7 +15,7 @@ gImgs.forEach(img => {
     });
 
 function filterGallery() {
-    const searchValue = document.getElementById('searchInput').value.toLowerCase();  // الحصول على النص المدخل وتحويله إلى حروف صغيرة
+    const searchValue = document.getElementById('searchInput').value.toLowerCase();  
 
     if (searchValue === '') {
         renderGallery(gImgs);

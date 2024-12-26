@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     textinput = document.querySelector(".memeTextInput");
 
     renderMame();
+    renderSavedMemes(); // Render saved memes as soon as the page loads
 
     elCanvas.addEventListener('mousedown', handleMouseDown);
     elCanvas.addEventListener('mousemove', handleMouseMove);
@@ -37,6 +38,7 @@ function renderMame() {
     gCtx.clearRect(0, 0, elCanvas.width, elCanvas.height);
     if (elIMG) {
         gCtx.drawImage(elIMG, 0, 0, elCanvas.width, elCanvas.height);
+        
     }
 
     gMeme.lines.forEach((line, idx) => {
@@ -51,6 +53,8 @@ function renderMame() {
             gCtx.strokeRect(line.x - 5, line.y - textHeight, textWidth + 10, textHeight + 5);
         }
     });
+    
+
 }
 
 function selectLine() {
@@ -58,23 +62,31 @@ function selectLine() {
     else {
         gMeme.selectedLineIdx += 1;
     }
-    console.log(gMeme.selectedLineIdx);
     renderMame();
 }
 
 function onMemepick(imgElement) {
-    const memeGallery = document.querySelector('.meme-gallery');
-    memeGallery.classList.add('hidde');
-    const canvasSection = document.querySelector('.meme-edit');
-    canvasSection.classList.remove('hidde');
+    document.querySelector('.saveMeme').classList.add('hidde');
+    document.querySelector('.meme-gallery').classList.add('hidde');
+    document.querySelector('.meme-edit').classList.remove('hidde');
+
+    console.log(imgElement.src)
+    const reader = new FileReader()
 
     elIMG = new Image();
-    elIMG.src = imgElement.src;
 
+    elIMG.src = imgElement.src;
+    gMeme.selectedImgId = imgElement.id;
+    
     elIMG.onload = () => {
         renderMame();
     };
+
+    elIMG.onerror = () => {
+        console.error("Failed to load image, possibly due to CORS issue.");
+    };
 }
+
 
 function handleMouseDown(e) {
     const mouseX = e.offsetX;
@@ -162,4 +174,10 @@ function fonton(fcl) {
     else line.x = elCanvas.width - textWidth - 10;
 
     renderMame();
+}
+
+
+function download(elLink) {
+    const dataURL = elCanvas.toDataURL('image/jpeg');
+    elLink.href = dataURL; 
 }

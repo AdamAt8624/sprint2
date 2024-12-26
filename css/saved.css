@@ -1,0 +1,21 @@
+.save-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.saved-meme {
+    width: 400px;
+    height: 400px;
+    margin-top: 10px;
+    margin-left:  30px;
+    position: relative;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    display: block; 
+    max-width: 100%;
+    height: auto;
+}
+
