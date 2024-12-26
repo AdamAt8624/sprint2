@@ -10,10 +10,8 @@
 </head>
 <body>
     <header class="main-header">
-        <div class="logo">MEME Generator</div>
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-            &#9776; 
-        </div>
+        <div class="logo" onclick="toggleGallery()">MEME Generator</div>
+        
         <nav class="main-nav" id="nav">
             <ul>
                 <li><a href="#" data-target="gallery" onclick="toggleGallery()">Gallery</a></li>
@@ -21,11 +19,12 @@
                 <li><a href="#" data-target="randomize" onclick="rnd()">Randomize</a></li>
             </ul>
         </nav>
+        <button type="button">≡</button>
     </header>
 <section class="meme-gallery ">
-    <input type="text" id="searchInput" placeholder="Search for memes..." oninput="filterGallery()" />
-    <button id="searchButton" onclick="filterGallery()">Search</button> 
+   
     <ul class="group">
+
         <li><a href="#" onclick="filterByCategory('all')" class="All">All</a></li> 
         <li><a href="#" onclick="filterByCategory('happy')" class="Happy">Happy</a></li>
         <li><a href="#" onclick="filterByCategory('animal')" class="Animal">Animal</a></li>
@@ -33,7 +32,17 @@
         <li><a href="#" onclick="filterByCategory('bad')" class="Bad">Bad</a></li>
         <li><a href="#" onclick="filterByCategory('funny')" class="Funny">Funny</a></li>
     </ul>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for memes..." oninput="filterGallery()" />
+    </div>
+    
+    <label for="uploadImg" class="upload-label">
+        <i class="fa-solid fa-upload"></i> Upload Image
+    </label>
+    <input type="file" id="uploadImg" accept="image/*" onchange="onImgInput(event)" style="display: none;" />
+
     <main class="Gallery">
+        
         
     </main>
 </section>
@@ -69,12 +78,13 @@
                     <option value="Monaco">Monaco</option>
                 </select>
                 
-
-                    <i class="fa-solid fa-brush" title="Brush tool" onclick="triggerColorPicker('brush')"></i>
-
+                <i class="fa-solid fa-brush" title="Brush tool" onclick="triggerColorPicker('brush')"></i>
+                <!-- Hidden color picker input -->
+                <input type="color" id="brushColorPicker" style="display: none;" onchange="updateBrushColor(event)" />
+ 
                     <i class="fa-solid fa-fill-drip" title="Fill tool" onclick="triggerColorPicker('fill')"></i>
                     <i class="fa-solid fa-bookmark" onclick="saveToStorage('meme')"></i>
-                    <i class="fa-solid fa-download" onclick="download(this)"></i>
+                    <i class="fa-solid fa-download" onclick="download(this)" download="my-img.jpg"></i>
                     <i class="fa-brands fa-facebook"></i>
             </div>
         </div>
@@ -96,6 +106,10 @@
     <script src="js/render-searchNAV.JS"></script>
     <script src="js/meme-edit.js"></script>
     <script src="js/random.js"></script>
+    <script src="js/upload-img.js"></script>
+    <script src="js/text-button.js"></script>
+
+
 
 
 </body>

@@ -49,16 +49,13 @@ function loadMemeToEditor(meme) {
     document.querySelector('.meme-edit').classList.remove('hidde');
     document.querySelector('.saveMeme').classList.add('hidde');
 
-    // Set the selected meme's image URL
     elIMG = new Image();
     elIMG.src = meme.imgUrl;
     gMeme.selectedImgId = meme.imgId;
 
-    // Set the meme lines (text)
-    gMeme.lines = meme.lines; // Copy the saved lines into the gMeme object
-    gMeme.selectedLineIdx = 0; // Optionally reset the selected line to the first line
+    gMeme.lines = meme.lines;
+    gMeme.selectedLineIdx = 0; 
 
-    // Render the meme (image and text) on the canvas
     elIMG.onload = () => {
         renderMame();
     };
