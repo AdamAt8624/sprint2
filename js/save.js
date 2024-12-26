@@ -1,27 +1,24 @@
 function renderSavedMemes() {
     const saveGallery = document.querySelector('.save-gallery');
-    saveGallery.innerHTML = ''; // Clear the save-gallery section before rendering
+    saveGallery.innerHTML = ''; 
 
-    const savedMemes = loadFromStorage('meme'); // Load saved memes from local storage
+    const savedMemes = loadFromStorage('meme'); 
 
     savedMemes.forEach(meme => {
         const memeArticle = document.createElement('article');
-        memeArticle.classList.add('saved-meme'); // Optional: Add a class for styling
+        memeArticle.classList.add('saved-meme'); 
 
-        // Create a new canvas for each saved meme
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
-        canvas.width = 300; // Set canvas width
-        canvas.height = 300; // Set canvas height
+        canvas.width = 300; 
+        canvas.height = 300; 
 
-        // Load the image and render it along with the text
         const img = new Image();
-        img.src = meme.imgUrl; // Get the image URL from saved meme data
+        img.src = meme.imgUrl; 
 
         img.onload = () => {
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // Draw the image on the canvas
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height); 
 
-            // Render each line of text on the canvas
             meme.lines.forEach(line => {
                 ctx.fillStyle = line.color;
                 ctx.font = `${line.size}px ${line.font}`;
@@ -29,15 +26,12 @@ function renderSavedMemes() {
             });
         };
 
-        // Add click event to load this meme into the meme editor
         canvas.addEventListener('click', () => {
-            loadMemeToEditor(meme); // Load the meme's image and lines into the editor
+            loadMemeToEditor(meme); 
         });
 
-        // Append the canvas to the article
         memeArticle.appendChild(canvas);
 
-        // Append the article to the save gallery
         saveGallery.appendChild(memeArticle);
     });
 }
@@ -51,7 +45,6 @@ function toggleSave(){
     renderSavedMemes()
 }
 function loadMemeToEditor(meme) {
-    // Hide the meme gallery and show the meme editor
     document.querySelector('.meme-gallery').classList.add('hidde');
     document.querySelector('.meme-edit').classList.remove('hidde');
     document.querySelector('.saveMeme').classList.add('hidde');
