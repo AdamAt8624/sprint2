@@ -53,7 +53,6 @@ function renderMame() {
             gCtx.strokeRect(line.x - 5, line.y - textHeight, textWidth + 10, textHeight + 5);
         }
     });
-    
 
 }
 
@@ -69,9 +68,8 @@ function onMemepick(imgElement) {
     document.querySelector('.saveMeme').classList.add('hidde');
     document.querySelector('.meme-gallery').classList.add('hidde');
     document.querySelector('.meme-edit').classList.remove('hidde');
-
-    console.log(imgElement.src)
-    const reader = new FileReader()
+console.log(imgElement)
+   
 
     elIMG = new Image();
 

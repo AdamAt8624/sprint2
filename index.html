@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
     <title>MEME Generator</title>
 </head>
 <body>
@@ -19,7 +18,7 @@
             <ul>
                 <li><a href="#" data-target="gallery" onclick="toggleGallery()">Gallery</a></li>
                 <li><a href="#" data-target="saved" onclick="toggleSave()">Saved</a></li>
-                <li><a href="#" data-target="randomize">Randomize</a></li>
+                <li><a href="#" data-target="randomize" onclick="rnd()">Randomize</a></li>
             </ul>
         </nav>
     </header>
@@ -63,9 +62,13 @@
                     <option value="Arial">Arial</option>
                     <option value="Times New Roman">Times New Roman</option>
                     <option value="Courier New">Courier New</option>
-                    <option value="Verdana">Verdana</option>
                     <option value="Georgia">Georgia</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Lucida Console">Lucida Console</option>
+                    <option value="Monaco">Monaco</option>
                 </select>
+                
 
                     <i class="fa-solid fa-brush" title="Brush tool" onclick="triggerColorPicker('brush')"></i>
 

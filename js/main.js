@@ -14,5 +14,3 @@ function toggleMenu() {
     nav.classList.toggle('active');
 }
 
-
-

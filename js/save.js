@@ -86,7 +86,6 @@ function saveToStorage(key) {
 
 function loadFromStorage(meme) {
     const json = localStorage.getItem(meme);
-    console.log(json);
     return JSON.parse(json) || []; 
 }
 
