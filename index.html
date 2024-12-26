@@ -79,13 +79,12 @@
                 </select>
                 
                 <i class="fa-solid fa-brush" title="Brush tool" onclick="triggerColorPicker('brush')"></i>
-                <!-- Hidden color picker input -->
                 <input type="color" id="brushColorPicker" style="display: none;" onchange="updateBrushColor(event)" />
- 
-                    <i class="fa-solid fa-fill-drip" title="Fill tool" onclick="triggerColorPicker('fill')"></i>
-                    <i class="fa-solid fa-bookmark" onclick="saveToStorage('meme')"></i>
+                <i class="fa-solid fa-fill-drip" title="Fill tool" onclick="triggerColorPicker('fill')"></i>
+                <input type="color" id="strokeColorPicker" style="display: none;" onchange="updateStrokeColor(event)" />
+                <i class="fa-solid fa-bookmark" onclick="saveToStorage('meme')"></i>
                     <i class="fa-solid fa-download" onclick="download(this)" download="my-img.jpg"></i>
-                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-facebook" onsubmit="onUploadImg(event)"></i>
             </div>
         </div>
     

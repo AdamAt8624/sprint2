@@ -6,8 +6,9 @@ let gMeme = {
         {
             txt: "Add text here",
             size: 20,
-            color: 'black',
+            color: 'white',
             font: 'Arial',
+            strokeColor: 'red',
             x: 50,
             y: 50
         }
@@ -49,11 +50,16 @@ function renderMame() {
     gMeme.lines.forEach((line, idx) => {
         gCtx.fillStyle = line.color;
         gCtx.font = `${line.size}px ${line.font}`;
+        gCtx.strokeStyle = line.strokeColor;  // Stroke color
+        gCtx.lineWidth = 2;
+        gCtx.strokeText(line.txt, line.x, line.y);
+
         gCtx.fillText(line.txt, line.x, line.y);
+
         if (gMeme.selectedLineIdx === idx) {
             const textWidth = gCtx.measureText(line.txt).width;
             const textHeight = line.size;
-            gCtx.strokeStyle = 'black';
+            gCtx.strokeStyle = 'red';
             gCtx.lineWidth = 2;
             gCtx.strokeRect(line.x - 5, line.y - textHeight, textWidth + 10, textHeight + 5);
         }
@@ -159,6 +165,8 @@ function cleanGmeme() {
                 size: 20,
                 color: 'black',
                 font: 'Arial',
+                strokeColor: 'red',
+
                 x: 50,
                 y: 50
             }
